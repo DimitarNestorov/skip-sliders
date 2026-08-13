@@ -2,7 +2,7 @@ import SwiftUI
 
 public struct PointSlider: View {
     @Environment(\.pointSliderStyle) private var style
-    @State private var dragOffset: CGPoint? = nil
+    @State internal var dragOffset: CGPoint? = nil
     
     private var configuration: PointSliderStyleConfiguration
     
@@ -62,7 +62,7 @@ struct PointSlider_Previews: PreviewProvider {
     }
 }
 
-private struct PointSlidersPreview: View {
+internal struct PointSlidersPreview: View {
     @State var pointX1 = 0.5
     @State var pointY1 = 0.5
     
