@@ -2,7 +2,7 @@ import SwiftUI
 
 public struct ValueSlider: View {
     @Environment(\.valueSliderStyle) private var style
-    @State private var dragOffset: CGFloat?
+    @State internal var dragOffset: CGFloat?
     
     private var configuration: ValueSliderStyleConfiguration
     
@@ -78,7 +78,7 @@ struct ValueSlider_Previews: PreviewProvider {
     }
 }
 
-private struct HorizontalValueSlidersPreview: View {
+internal struct HorizontalValueSlidersPreview: View {
     @State var value1 = 0.5
     @State var value2 = 0.5
     @State var value3 = 0.5
@@ -140,7 +140,7 @@ private struct HorizontalValueSlidersPreview: View {
     }
 }
 
-private struct VerticalValueSlidersPreview: View {
+internal struct VerticalValueSlidersPreview: View {
     @State var value1 = 0.5
     @State var value2 = 0.5
     @State var value3 = 0.5
