@@ -2,7 +2,7 @@ import SwiftUI
 
 public struct RangeSlider: View {
     @Environment(\.rangeSliderStyle) private var style
-    @State private var dragOffset: CGFloat?
+    @State internal var dragOffset: CGFloat?
     
     private var configuration: RangeSliderStyleConfiguration
     
@@ -78,7 +78,7 @@ struct RangeSlider_Previews: PreviewProvider {
     }
 }
 
-private struct HorizontalRangeSlidersPreview: View {
+internal struct HorizontalRangeSlidersPreview: View {
     @State var range1 = 0.1...0.9
     @State var range2 = 0.1...0.9
     @State var range3 = 0.1...0.9
