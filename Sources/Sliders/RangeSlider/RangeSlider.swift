@@ -29,8 +29,8 @@ extension RangeSlider {
         onEditingChanged: @escaping (Bool) -> Void = { _ in }
     ) where V : BinaryFloatingPoint, V.Stride : BinaryFloatingPoint {
         self.init(
-            style,
-            RangeSliderStyleConfiguration(
+            style: style,
+            configuration: RangeSliderStyleConfiguration(
                 range: Binding(
                     get: { CGFloat(range.wrappedValue.clamped(to: bounds).lowerBound) ... CGFloat(range.wrappedValue.clamped(to: bounds).upperBound) },
                     set: { range.wrappedValue = V($0.lowerBound) ... V($0.upperBound) }
@@ -55,8 +55,8 @@ extension RangeSlider {
         onEditingChanged: @escaping (Bool) -> Void = { _ in }
     ) where V : FixedWidthInteger, V.Stride : FixedWidthInteger {
         self.init(
-            style,
-            RangeSliderStyleConfiguration(
+            style: style,
+            configuration: RangeSliderStyleConfiguration(
                 range: Binding(
                     get: { CGFloat(range.wrappedValue.clamped(to: bounds).lowerBound) ... CGFloat(range.wrappedValue.clamped(to: bounds).upperBound) },
                     set: { range.wrappedValue = V($0.lowerBound) ... V($0.upperBound) }
