@@ -1,6 +1,6 @@
 import SwiftUI
 
-public struct AnyRangeSliderStyle: RangeSliderStyle {
+public struct AnyRangeSliderStyle: RangeSliderStyle, Sendable {
     private let styleMakeBody: (RangeSliderStyle.Configuration) -> AnyView
     
     public init<S: RangeSliderStyle>(_ style: S) {
