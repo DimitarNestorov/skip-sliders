@@ -3,7 +3,7 @@ import SwiftUI
 public struct RangeSlider: View {
     @State internal var dragOffset: CGFloat?
     
-    private let style: RangeSliderStyle
+    private let style: HorizontalRangeSliderStyle
     private var configuration: RangeSliderStyleConfiguration
     
     public var body: some View {
@@ -14,7 +14,7 @@ public struct RangeSlider: View {
 }
 
 extension RangeSlider {
-    init(style: RangeSliderStyle, configuration: RangeSliderStyleConfiguration) {
+    init(style: HorizontalRangeSliderStyle, configuration: RangeSliderStyleConfiguration) {
         self.style = style
         self.configuration = configuration
     }
@@ -22,7 +22,7 @@ extension RangeSlider {
 
 extension RangeSlider {
     public init<V>(
-        style: RangeSliderStyle,
+        style: HorizontalRangeSliderStyle,
         range: Binding<ClosedRange<V>>,
         in bounds: ClosedRange<V> = 0.0...1.0,
         step: V.Stride = 0.001,
@@ -48,7 +48,7 @@ extension RangeSlider {
 
 extension RangeSlider {
     public init<V>(
-        style: RangeSliderStyle,
+        style: HorizontalRangeSliderStyle,
         range: Binding<ClosedRange<V>>,
         in bounds: ClosedRange<V> = 0...1,
         step: V.Stride = 1,
