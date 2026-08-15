@@ -1,6 +1,6 @@
 import SwiftUI
 
-public struct RangeTrackConfiguration {
+public struct RangeTrackConfiguration: Sendable {
     public static let defaultConfiguration = RangeTrackConfiguration()
     
     public let bounds: ClosedRange<CGFloat>
