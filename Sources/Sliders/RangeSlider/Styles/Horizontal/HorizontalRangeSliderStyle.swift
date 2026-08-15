@@ -11,7 +11,7 @@ public struct HorizontalRangeSliderStyle<Track: View, LowerThumb: View, UpperThu
     let lowerThumbInteractiveSize: CGSize
     let upperThumbInteractiveSize: CGSize
 
-    private let options: RangeSliderOptions
+    private let options: RangeSliderOptions = RangeSliderOptions(rawValue: 1 << 0)
 
 
     public func makeBody(configuration: Self.Configuration) -> some View {
@@ -142,7 +142,7 @@ public struct HorizontalRangeSliderStyle<Track: View, LowerThumb: View, UpperThu
         .frame(minHeight: max(self.lowerThumbInteractiveSize.height, self.upperThumbInteractiveSize.height))
     }
 
-    public init(track: Track, lowerThumb: LowerThumb, upperThumb: UpperThumb, lowerThumbSize: CGSize = CGSize(width: 27, height: 27), upperThumbSize: CGSize = CGSize(width: 27, height: 27), lowerThumbInteractiveSize: CGSize = CGSize(width: 44, height: 44), upperThumbInteractiveSize: CGSize = CGSize(width: 44, height: 44), options: RangeSliderOptions = .defaultOptions) {
+    public init(track: Track, lowerThumb: LowerThumb, upperThumb: UpperThumb, lowerThumbSize: CGSize = CGSize(width: 27, height: 27), upperThumbSize: CGSize = CGSize(width: 27, height: 27), lowerThumbInteractiveSize: CGSize = CGSize(width: 44, height: 44), upperThumbInteractiveSize: CGSize = CGSize(width: 44, height: 44)) {
         self.track = track
         self.lowerThumb = lowerThumb
         self.upperThumb = upperThumb
@@ -150,12 +150,11 @@ public struct HorizontalRangeSliderStyle<Track: View, LowerThumb: View, UpperThu
         self.upperThumbSize = upperThumbSize
         self.lowerThumbInteractiveSize = lowerThumbInteractiveSize
         self.upperThumbInteractiveSize = upperThumbInteractiveSize
-        self.options = options
     }
 }
 
 extension HorizontalRangeSliderStyle where Track == DefaultHorizontalRangeTrack {
-    public init(lowerThumb: LowerThumb, upperThumb: UpperThumb, lowerThumbSize: CGSize = CGSize(width: 27, height: 27), upperThumbSize: CGSize = CGSize(width: 27, height: 27), lowerThumbInteractiveSize: CGSize = CGSize(width: 44, height: 44), upperThumbInteractiveSize: CGSize = CGSize(width: 44, height: 44), options: RangeSliderOptions = .defaultOptions,
+    public init(lowerThumb: LowerThumb, upperThumb: UpperThumb, lowerThumbSize: CGSize = CGSize(width: 27, height: 27), upperThumbSize: CGSize = CGSize(width: 27, height: 27), lowerThumbInteractiveSize: CGSize = CGSize(width: 44, height: 44), upperThumbInteractiveSize: CGSize = CGSize(width: 44, height: 44),
 ) {
         self.track = DefaultHorizontalRangeTrack()
         self.lowerThumb = lowerThumb
@@ -164,13 +163,12 @@ extension HorizontalRangeSliderStyle where Track == DefaultHorizontalRangeTrack 
         self.upperThumbSize = upperThumbSize
         self.lowerThumbInteractiveSize = lowerThumbInteractiveSize
         self.upperThumbInteractiveSize = upperThumbInteractiveSize
-        self.options = options
 
     }
 }
 
 extension HorizontalRangeSliderStyle where LowerThumb == DefaultThumb, UpperThumb == DefaultThumb {
-    public init(track: Track, lowerThumbSize: CGSize = CGSize(width: 27, height: 27), upperThumbSize: CGSize = CGSize(width: 27, height: 27), lowerThumbInteractiveSize: CGSize = CGSize(width: 44, height: 44), upperThumbInteractiveSize: CGSize = CGSize(width: 44, height: 44), options: RangeSliderOptions = .defaultOptions,
+    public init(track: Track, lowerThumbSize: CGSize = CGSize(width: 27, height: 27), upperThumbSize: CGSize = CGSize(width: 27, height: 27), lowerThumbInteractiveSize: CGSize = CGSize(width: 44, height: 44), upperThumbInteractiveSize: CGSize = CGSize(width: 44, height: 44),
 ) {
         self.track = track
         self.lowerThumb = DefaultThumb()
@@ -179,13 +177,12 @@ extension HorizontalRangeSliderStyle where LowerThumb == DefaultThumb, UpperThum
         self.upperThumbSize = upperThumbSize
         self.lowerThumbInteractiveSize = lowerThumbInteractiveSize
         self.upperThumbInteractiveSize = upperThumbInteractiveSize
-        self.options = options
 
     }
 }
 
 extension HorizontalRangeSliderStyle where LowerThumb == DefaultThumb, UpperThumb == DefaultThumb, Track == DefaultHorizontalRangeTrack {
-    public init(lowerThumbSize: CGSize = CGSize(width: 27, height: 27), upperThumbSize: CGSize = CGSize(width: 27, height: 27), lowerThumbInteractiveSize: CGSize = CGSize(width: 44, height: 44), upperThumbInteractiveSize: CGSize = CGSize(width: 44, height: 44), options: RangeSliderOptions = .defaultOptions,
+    public init(lowerThumbSize: CGSize = CGSize(width: 27, height: 27), upperThumbSize: CGSize = CGSize(width: 27, height: 27), lowerThumbInteractiveSize: CGSize = CGSize(width: 44, height: 44), upperThumbInteractiveSize: CGSize = CGSize(width: 44, height: 44),
 ) {
         self.track = DefaultHorizontalRangeTrack()
         self.lowerThumb = DefaultThumb()
@@ -194,7 +191,6 @@ extension HorizontalRangeSliderStyle where LowerThumb == DefaultThumb, UpperThum
         self.upperThumbSize = upperThumbSize
         self.lowerThumbInteractiveSize = lowerThumbInteractiveSize
         self.upperThumbInteractiveSize = upperThumbInteractiveSize
-        self.options = options
     }
 }
 
