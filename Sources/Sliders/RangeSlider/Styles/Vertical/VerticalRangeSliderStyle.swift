@@ -13,7 +13,7 @@ public struct VerticalRangeSliderStyle<Track: View, LowerThumb: View, UpperThumb
 
     private let options: RangeSliderOptions = RangeSliderOptions(rawValue: 1 << 0)
 
-    public func makeBody(configuration: Self.Configuration) -> AnyView {
+    public func makeBody(configuration: Self.Configuration) -> some View {
         GeometryReader { geometry in
             ZStack {
                 self.track

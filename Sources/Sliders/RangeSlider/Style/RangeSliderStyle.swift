@@ -17,7 +17,7 @@ public protocol RangeSliderStyle {
     ///
     /// This method will be called for each instance of `RangeSlider` created within
     /// a view hierarchy where this style is the current `RangeSliderStyle`.
-    func makeBody(configuration: Self.Configuration) -> AnyView
+    func makeBody(configuration: Self.Configuration) -> some View
 
     /// The properties of a `RangeSlider` instance being created.
     typealias Configuration = RangeSliderStyleConfiguration
