@@ -1,8 +1,8 @@
 import SwiftUI
 
 public struct RangeSlider: View {
-    @Environment(\.rangeSliderStyle) private var style
-    @State private var dragOffset: CGFloat?
+    @Environment(\.rangeSliderStyle) internal var style
+    @State internal var dragOffset: CGFloat?
     
     private var configuration: RangeSliderStyleConfiguration
     

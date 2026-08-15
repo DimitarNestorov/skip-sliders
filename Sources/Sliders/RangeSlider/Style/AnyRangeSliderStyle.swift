@@ -1,7 +1,7 @@
 import SwiftUI
 
 public struct AnyRangeSliderStyle: RangeSliderStyle, Sendable {
-    private let styleMakeBody: (RangeSliderStyle.Configuration) -> AnyView
+    @Sendable private let styleMakeBody: (RangeSliderStyle.Configuration) -> AnyView
     
     public init<S: RangeSliderStyle>(_ style: S) {
         self.styleMakeBody = style.makeTypeErasedBody
