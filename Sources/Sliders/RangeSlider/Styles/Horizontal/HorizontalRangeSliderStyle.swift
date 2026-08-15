@@ -73,7 +73,7 @@ public struct HorizontalRangeSliderStyle<Track: View, LowerThumb: View, UpperThu
                                 upperBound: configuration.range.wrappedValue.upperBound,
                                 bounds: configuration.bounds,
                                 distance: configuration.distance,
-                                forceAdjacent: options.contains(.forceAdjacentValue)
+                                forceAdjacent: true
                             )
                         }
                         .onEnded { _ in
@@ -127,7 +127,7 @@ public struct HorizontalRangeSliderStyle<Track: View, LowerThumb: View, UpperThu
                                 updatedUpperBound: computedUpperBound,
                                 bounds: configuration.bounds,
                                 distance: configuration.distance,
-                                forceAdjacent: options.contains(.forceAdjacentValue)
+                                forceAdjacent: true
                             )
                         }
                         .onEnded { _ in

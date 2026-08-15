@@ -71,7 +71,7 @@ public struct VerticalRangeSliderStyle<Track: View, LowerThumb: View, UpperThumb
                                 upperBound: configuration.range.wrappedValue.upperBound,
                                 bounds: configuration.bounds,
                                 distance: configuration.distance,
-                                forceAdjacent: options.contains(.forceAdjacentValue)
+                                forceAdjacent: true
                             )
                         }
                         .onEnded { _ in
@@ -124,7 +124,7 @@ public struct VerticalRangeSliderStyle<Track: View, LowerThumb: View, UpperThumb
                                 updatedUpperBound: computedUpperBound,
                                 bounds: configuration.bounds,
                                 distance: configuration.distance,
-                                forceAdjacent: options.contains(.forceAdjacentValue)
+                                forceAdjacent: true
                             )
                         }
                         .onEnded { _ in
