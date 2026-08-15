@@ -56,6 +56,7 @@ extension PointSlider {
 }
 
 
+/*
 struct PointSlider_Previews: PreviewProvider {
     static var previews: some View {
         PointSlidersPreview()
@@ -119,3 +120,4 @@ private struct PointSlidersPreview: View {
         .padding()
     }
 }
+*/

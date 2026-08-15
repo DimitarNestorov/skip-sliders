@@ -67,6 +67,7 @@ extension RangeSlider {
     }
 }
 
+/*
 struct RangeSlider_Previews: PreviewProvider {
     static var previews: some View {
         Group {
@@ -298,3 +299,4 @@ public struct HalfCapsule: View, InsettableShape {
         self.inset = inset
     }
 }
+*/

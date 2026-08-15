@@ -68,7 +68,7 @@ extension ValueSlider {
     }
 }
 
-
+/*
 struct ValueSlider_Previews: PreviewProvider {
     static var previews: some View {
         Group {
@@ -199,3 +199,4 @@ private struct VerticalValueSlidersPreview: View {
         .padding()
     }
 }
+*/
