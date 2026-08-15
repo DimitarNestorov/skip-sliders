@@ -14,7 +14,8 @@ public struct RangeSlider: View {
 }
 
 extension RangeSlider {
-    init(_ configuration: RangeSliderStyleConfiguration) {
+    init(style: style, configuration: RangeSliderStyleConfiguration) {
+        self.style = style
         self.configuration = configuration
     }
 }
