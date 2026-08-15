@@ -1,6 +1,6 @@
 import SwiftUI
 
-public struct RangeSliderStyleConfiguration: Sendable {
+public struct RangeSliderStyleConfiguration {
     public let range: Binding<ClosedRange<CGFloat>>
     public let bounds: ClosedRange<CGFloat>
     public let step: CGFloat

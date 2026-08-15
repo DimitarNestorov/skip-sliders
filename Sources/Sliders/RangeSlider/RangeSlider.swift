@@ -1,9 +1,9 @@
 import SwiftUI
 
 public struct RangeSlider: View {
-    @Environment(\.rangeSliderStyle) internal var style
     @State internal var dragOffset: CGFloat?
     
+    private let style: RangeSliderStyle
     private var configuration: RangeSliderStyleConfiguration
     
     public var body: some View {
@@ -21,6 +21,7 @@ extension RangeSlider {
 
 extension RangeSlider {
     public init<V>(
+        style: RangeSliderStyle,
         range: Binding<ClosedRange<V>>,
         in bounds: ClosedRange<V> = 0.0...1.0,
         step: V.Stride = 0.001,
@@ -28,6 +29,7 @@ extension RangeSlider {
         onEditingChanged: @escaping (Bool) -> Void = { _ in }
     ) where V : BinaryFloatingPoint, V.Stride : BinaryFloatingPoint {
         self.init(
+            style,
             RangeSliderStyleConfiguration(
                 range: Binding(
                     get: { CGFloat(range.wrappedValue.clamped(to: bounds).lowerBound) ... CGFloat(range.wrappedValue.clamped(to: bounds).upperBound) },
@@ -45,6 +47,7 @@ extension RangeSlider {
 
 extension RangeSlider {
     public init<V>(
+        style: RangeSliderStyle,
         range: Binding<ClosedRange<V>>,
         in bounds: ClosedRange<V> = 0...1,
         step: V.Stride = 1,
@@ -52,6 +55,7 @@ extension RangeSlider {
         onEditingChanged: @escaping (Bool) -> Void = { _ in }
     ) where V : FixedWidthInteger, V.Stride : FixedWidthInteger {
         self.init(
+            style,
             RangeSliderStyleConfiguration(
                 range: Binding(
                     get: { CGFloat(range.wrappedValue.clamped(to: bounds).lowerBound) ... CGFloat(range.wrappedValue.clamped(to: bounds).upperBound) },
