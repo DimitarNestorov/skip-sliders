@@ -1,8 +1,8 @@
 import SwiftUI
 
 public struct PointSlider: View {
-    @Environment(\.pointSliderStyle) private var style
-    @State private var dragOffset: CGPoint? = nil
+    @Environment(\.pointSliderStyle) internal var style
+    @State internal var dragOffset: CGPoint? = nil
     
     private var configuration: PointSliderStyleConfiguration
     
