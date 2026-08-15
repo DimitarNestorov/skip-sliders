@@ -1,9 +1,9 @@
 import SwiftUI
 
-public struct RangeSlider: View {
+public struct RangeSlider<Track: View, LowerThumb: View, UpperThumb: View>: View {
     @State internal var dragOffset: CGFloat?
     
-    private let style: HorizontalRangeSliderStyle
+    private let style: HorizontalRangeSliderStyle<Track, LowerThumb, UpperThumb>
     private var configuration: RangeSliderStyleConfiguration
     
     public var body: some View {
@@ -14,7 +14,7 @@ public struct RangeSlider: View {
 }
 
 extension RangeSlider {
-    init(style: HorizontalRangeSliderStyle, configuration: RangeSliderStyleConfiguration) {
+    init(style: HorizontalRangeSliderStyle<Track, LowerThumb, UpperThumb>, configuration: RangeSliderStyleConfiguration) {
         self.style = style
         self.configuration = configuration
     }
@@ -22,7 +22,7 @@ extension RangeSlider {
 
 extension RangeSlider {
     public init<V>(
-        style: HorizontalRangeSliderStyle,
+        style: HorizontalRangeSliderStyle<Track, LowerThumb, UpperThumb>,
         range: Binding<ClosedRange<V>>,
         in bounds: ClosedRange<V> = 0.0...1.0,
         step: V.Stride = 0.001,
@@ -48,7 +48,7 @@ extension RangeSlider {
 
 extension RangeSlider {
     public init<V>(
-        style: HorizontalRangeSliderStyle,
+        style: HorizontalRangeSliderStyle<Track, LowerThumb, UpperThumb>,
         range: Binding<ClosedRange<V>>,
         in bounds: ClosedRange<V> = 0...1,
         step: V.Stride = 1,
